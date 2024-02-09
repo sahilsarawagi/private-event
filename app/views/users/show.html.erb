@@ -1,0 +1,11 @@
+<h1> All the event that <%= @user.email %> has created are as follow </h1>
+<ol>
+  <% @user.events.each do |eve| %>
+    <li>
+      <h3>  <%= eve.title %> </h3>
+       <p> description: <%= eve.description %> </p>
+       <p> location: <%= eve.event_location %> </p>
+       <p> date and time <%= eve.event_date %> </p>
+    </ol>
+  <% end %>
+</ul>
