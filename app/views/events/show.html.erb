@@ -9,3 +9,14 @@
 <%= button_to 'Join Event', event_attendances_path, 
   params: { attended_event_id: @event.id }, method: :post %>
 <% else %>
+<h3>You need to first log in to join this event </h3>
+<% end %>
+
+<h1>  List of Attendees are as follow: </h1>
+<ol>
+  <% @event.attendees.each do |eve| %>
+    <li>
+      <h3>  <%= eve.email %> </h3>
+    </li>
+  <% end %>
+</ol>
