@@ -9,3 +9,13 @@
     </li>
   <% end %>
 </ol>
+
+
+<h1>  List of Events this user attended: </h1>
+<ol>
+  <% @user.attended_events.each do |eve| %>
+    <li>
+      <h3>  <%= eve.title %> </h3>
+    </li>
+  <% end %>
+</ol>
