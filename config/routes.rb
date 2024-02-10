@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   resources :events 
   resources :users
+  resources :event_attendances
   # Defines the root path route ("/")
   root "events#index"
 end

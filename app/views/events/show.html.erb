@@ -2,3 +2,10 @@
 <p><strong> description: </strong><%= @event.description %> </p>
 <p><strong> location:</strong> <%= @event.event_location %> </p>
 <p><strong> date and time: </strong><%= @event.event_date %> </p>
+
+
+<% if user_signed_in? %> 
+<h3>Click on this button to register yourself for joining </h3>
+<%= button_to 'Join Event', event_attendances_path, 
+  params: { attended_event_id: @event.id }, method: :post %>
+<% else %>
