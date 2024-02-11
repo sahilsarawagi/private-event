@@ -1,8 +1,24 @@
 <h1>All The Events </h1>
+
+<h2>Upcoming Events </h2>
 <ol>
   <% @events.each do |eve| %>
+    <% if eve.future %> 
     <li>
       <h3>  <%= link_to eve.title, event_path(eve) %> </h3>
     </li>
   <% end %>
+<% end %>
+</ol>
+
+
+<h2>Past Events </h2>
+<ol>
+  <% @events.each do |eve| %>
+    <% if eve.past %> 
+    <li>
+      <h3>  <%= link_to eve.title, event_path(eve) %> </h3>
+    </li>
+  <% end %>
+<% end %>
 </ol>
