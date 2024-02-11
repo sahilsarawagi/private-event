@@ -12,10 +12,20 @@
 
 
 <h1>  List of Events this user attended: </h1>
+<h2>Past Events</h2>
 <ol>
-  <% @user.attended_events.each do |eve| %>
-    <li>
-      <h3>  <%= eve.title %> </h3>
-    </li>
+  <% @user.attended_events.each do |event| %>
+    <% if event.event_date < Date.current %>
+      <li><%= event.title %></li>
+    <% end %>
+  <% end %>
+</ol>
+
+<h2>Future Events</h2>
+<ol>
+  <% @user.attended_events.each do |event| %>
+    <% if event.event_date >= Date.current %>
+      <li><%= event.title %></li>
+    <% end %>
   <% end %>
 </ol>
