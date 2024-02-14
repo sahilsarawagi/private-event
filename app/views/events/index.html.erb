@@ -2,23 +2,19 @@
 
 <h2>Upcoming Events </h2>
 <ol>
-  <% @events.each do |eve| %>
-    <% if eve.future %> 
+  <% @events.future.each do |eve| %>
     <li>
       <h3>  <%= link_to eve.title, event_path(eve) %> </h3>
     </li>
-  <% end %>
 <% end %>
 </ol>
 
 
 <h2>Past Events </h2>
 <ol>
-  <% @events.each do |eve| %>
-    <% if eve.past %> 
+  <% @events.past.each do |eve| %>
     <li>
       <h3>  <%= link_to eve.title, event_path(eve) %> </h3>
     </li>
-  <% end %>
 <% end %>
 </ol>
